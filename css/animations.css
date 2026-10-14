@@ -1,0 +1,104 @@
+/*
+  css/animations.css
+  -------------------------------------------------
+  Entrance animations, hover effects and scroll‑reveal utility
+  classes for the Akash portfolio landing page.
+  -------------------------------------------------
+*/
+
+/* -------------------------------------------------
+   1. Keyframe definitions
+   ------------------------------------------------- */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-in {
+  from { opacity: 0; transform: translateX(-30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* -------------------------------------------------
+   2. Animation utility classes (used in HTML)
+   ------------------------------------------------- */
+/* base animation properties – can be combined with delay utilities if needed */
+.animate-fade-in {
+  animation-name: fade-in;
+  animation-duration: 600ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+.animate-fade-up {
+  animation-name: fade-up;
+  animation-duration: 600ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+.animate-slide-in {
+  animation-name: slide-in;
+  animation-duration: 600ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+/* -------------------------------------------------
+   3. Hover effect utilities (Tailwind‑like syntax)
+   ------------------------------------------------- */
+/* scale on hover */
+.hover\:scale-105:hover {
+  transform: scale(1.05);
+}
+
+/* shadow on hover */
+.hover\:shadow-lg:hover {
+  box-shadow: var(--shadow-lg, 0 10px 15px rgba(0,0,0,0.5));
+}
+
+/* text colour accent on hover */
+.hover\:text-accent:hover {
+  color: var(--color-accent, #38bdf8);
+}
+
+/* underline on hover (used for links) */
+.hover\:underline:hover {
+  text-decoration: underline;
+}
+
+/* -------------------------------------------------
+   4. Scroll‑reveal helper classes (JS adds .is-visible)
+   ------------------------------------------------- */
+/* Elements start hidden; JS adds .is-visible when they intersect */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 600ms ease-out, transform 600ms ease-out;
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* -------------------------------------------------
+   5. Reduced‑motion preference – disable animations
+   ------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in,
+  .animate-fade-up,
+  .animate-slide-in,
+  .scroll-reveal,
+  .scroll-reveal.is-visible {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
