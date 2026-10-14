@@ -1,0 +1,23 @@
+/* Navigation */
+nav {background-color:var(--color-surface); border-bottom:1px solid var(--color-border);}
+nav .nav-link {color:var(--color-text); transition:color .2s;}
+nav .nav-link.active {color:var(--color-accent);}
+/* Hero */
+#hero {background:linear-gradient(135deg, var(--color-bg), var(--color-surface)); color:var(--color-text);}
+/* About */
+#about {background-color:var(--color-surface); color:var(--color-text);}
+.skill-chip {background-color:var(--color-bg); color:var(--color-text);}
+/* Projects */
+#projects {background-color:var(--color-bg);}
+.project-card {background-color:var(--color-surface);}
+/* Contact */
+#contact {background-color:var(--color-surface);}
+/* Footer */
+footer {background-color:var(--color-surface);}
+/* Responsive */
+@media (min-width:640px) {
+  .container {padding-left:var(--spacing-8); padding-right:var(--spacing-8);}
+}
+@media (min-width:1024px) {
+  .container {padding-left:var(--spacing-16); padding-right:var(--spacing-16);}
+}
